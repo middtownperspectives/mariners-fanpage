@@ -8,44 +8,51 @@ Navy Blue: #0C2340 , rgba(12,35,64,1)
 
 */
 
-* {
+*,
+*::after,
+*::before {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%; /*browsers default to 16px as font size... this makes initial font size 10px instead*/
 }
 
 body {
 	font-family: "lato", sans-serif;
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 1.6rem;
 	line-height: 1.7;
 	color: #8A8D8F;
-	padding: 30px;
+	padding: 3rem;
+	box-sizing: border-box;
 }
 
 .header {
 	height: 95vh;
-	background-image: linear-gradient(to right bottom, rgba(0, 104, 94, 0.9), rgba(12,35,64,0.9) ), url(../images/mariners-hero.jpg);
+	background-image: linear-gradient(to right bottom, rgba(0, 104, 94, 0.9), rgba(12,35,64,0.9) ), url(../images/mariner-hero-2.jpg);
 	background-size: cover;
 	background-position: top;
 	position: relative;
 
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 }
 
-.logo-box {
+.header__logo-box {
 	position: absolute;
-	top: 40px;
-	left: 40px;
+	top: 4rem;
+	left: 4rem;
 }
 
-.logo {
-	height: 35px;
+.header__logo {
+	height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
 	position: absolute;
-	top: 35%;
+	top: 45%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	text-align: center;
@@ -54,38 +61,38 @@ body {
 .heading-primary {
 	color: #fff;
 	text-transform: uppercase;
-	margin-bottom: 20%;
+	margin-bottom: 10%;
 
 	backface-visibility: hidden;
 }
 
-.heading-primary-main {
+.heading-primary--main {
 	display: block;
-	font-size: 60px;
+	font-size: 6rem;
 	font-weight: 400;
-	letter-spacing: 33px;
+	letter-spacing: 3.3rem;
 
 	animation-name: moveInLeft;
 	animation-duration: 1s;
 	animation-timing-function: ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
 	display: block;
-	font-size: 20px;
+	font-size: 2rem;
 	font-weight: 400;
-	letter-spacing: 20px;
+	letter-spacing: 2rem;
 	animation: moveInRight 1s ease-out; /*shorthand for calling animations*/
 }
 
 @keyframes moveInLeft {
 	0% {
 		opacity: 0;
-		transform: translateX(-100px);
+		transform: translateX(-10rem);
 	}
 
 	70% {
-		transform: translateX(10px);
+		transform: translateX(1rem);
 	}
 	
 	100% {
@@ -97,11 +104,11 @@ body {
 @keyframes moveInRight {
 	0% {
 		opacity: 0;
-		transform: translateX(100px);
+		transform: translateX(10rem);
 	}
 
 	70% {
-		transform: translateX(-10px);
+		transform: translateX(-1rem);
 	}
 	
 	100% {
@@ -113,7 +120,7 @@ body {
 @keyframes moveInBottom {
 	0% {
 		opacity: 0;
-		transform: translateY(30px);
+		transform: translateY(3rem);
 	}
 	
 	100% {
@@ -126,29 +133,30 @@ body {
 .btn:visited {
 	text-decoration: none;
 	text-transform: uppercase;
-	padding: 15px 40px;
+	padding: 1.5rem 4rem;
 	display: inline-block;
-	border-radius: 100px;
+	border-radius: 10rem;
 	transition: all .2s; /*shorthand for transition*/
 	position: relative;
+	font-size: 1.6rem;
 }
 
 .btn:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
+	transform: translateY(-.3rem);
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
 }
 
 .btn:active {
-	transform: translateY(-1px);
-	box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+	transform: translateY(-.1rem);
+	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .3);
 }
 
-.btn-white {
+.btn--white {
 	background-color: #fff;
 	color: #8A8D8F;
 }
 
-.btn-animated {
+.btn--animated {
 	animation: moveInBottom .5s ease-out .75s;
 	animation-fill-mode: backwards;
 }
@@ -158,7 +166,7 @@ body {
 	display: inline-block;
 	height: 100%;
 	width: 100%;
-	border-radius: 100px;
+	border-radius: 10rem;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -166,7 +174,7 @@ body {
 	z-index: -1;
 }
 
-.btn-white::after {
+.btn--white::after {
 	background-color: #fff;
 }
 
