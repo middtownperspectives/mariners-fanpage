@@ -1,0 +1,33 @@
+/*
+COLORS:
+
+Silver: #8A8D8F , rgba(138,141,143,1)
+Yellow: #FFCC00 , rgba(255,204,0,1)
+Northwest Green: #00685E , rgba(0,104,94,1)
+Navy Blue: #0C2340 , rgba(12,35,64,1)
+
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "lato", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.7;
+	color: #8A8D8F;
+	padding: 30px;
+}
+
+.header {
+	height: 95vh;
+	background-image: linear-gradient(to right bottom, rgba(0, 104, 94, 0.8), rgba(12,35,64,0.8) ), url(../images/mariners-hero.jpg);
+	background-size: cover;
+	background-position: top;
+
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+}
