@@ -1,0 +1,23 @@
+{
+  "name": "mariners-fanpage",
+  "version": "1.0.0",
+  "description": "Single page layout of my favorite baseball team... the Seattle Mariners.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/middtown/mariners-fanpage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/middtown/mariners-fanpage/issues"
+  },
+  "homepage": "https://github.com/middtown/mariners-fanpage#readme",
+  "devDependencies": {
+    "node-sass": "^4.8.3"
+  }
+}
