@@ -1,0 +1,69 @@
+.card {
+
+	//functionality of the card element
+	perspective: 150rem;
+	-moz-perspective: 150rem;
+	position: relative;
+	height: 50rem;
+
+	&__side {
+		height: 50rem;
+		color: white;
+		font-size: 5rem;
+		transition: all .8s ease;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		backface-visibility: hidden;
+		border-radius: 3px;
+		box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+		overflow: hidden;
+
+		&--front {
+			background-color: $color-white;
+
+		}
+
+		&--back {
+			transform: rotateY(180deg);
+
+			&--1 {
+				background-image: linear-gradient(to right bottom, $color-mariner-retro-blue, $color-mariner-retro-yellow);
+
+			}
+		}
+	}
+
+	&:hover &__side--front {
+		transform: rotateY(-180deg);
+	}
+
+	&:hover &__side--back {
+		transform: rotateY(0);
+	}
+
+	//----------- front of card styles ----------//
+	&__picture {
+		background-size: cover;
+		height: 25rem;
+		background-blend-mode: screen;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+
+		&--1 {
+			background-image: linear-gradient(to right bottom, rgba($color-mariner-retro-yellow, .8), rgba($color-mariner-retro-blue, .8) ), url(../images/kyle-seager-bh.jpg);
+		}
+
+		&--2 {
+			background-image: url(../images/kyle-seager-bobblehead.jpg);
+		}
+
+		&--3 {
+			background-image: url(../images/robinson-cano-bobblehead.jpg);
+		}
+
+		&--4 {
+			background-image: url(../images/felix-hernandez-bobblehead.jpg);
+		}
+	}
+}
