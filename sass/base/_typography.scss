@@ -1,7 +1,7 @@
 body {
 	font-family: "lato", sans-serif;
 	font-weight: 400;
-	font-size: 1.6rem;
+	font-size: $default-font-size;
 	line-height: 1.7;
 	color: $color-mariner-silver;
 	padding: 3rem;
@@ -33,11 +33,11 @@ body {
 }
 
 .heading-secondary {
-	font-size: 3.5rem;
+	font-size: 4rem;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: .2rem;
-	background-image: linear-gradient(to right, $color-mariner-northwest-green, $color-mariner-navyblue);
+	background-image: linear-gradient(to right, $color-mariner-primary, $color-mariner-secondary);
 	display: inline-block;
 	-webkit-background-clip: text;
 	color: transparent;
@@ -47,4 +47,19 @@ body {
 		transform: skewY(6deg) skewX(6deg) scale(1.1);
 		text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
 	}
+}
+
+.heading-tertiary {
+	font-size: 2rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.paragraph {
+	font-size: $default-font-size;
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+
 }

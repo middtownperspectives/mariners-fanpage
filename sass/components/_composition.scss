@@ -1,0 +1,41 @@
+.composition {
+	position: relative;
+
+	&__photo {
+		width: 55%;
+		box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+		border-radius: 4px;
+		position: absolute;
+		z-index: 10;
+		transition: all .2s;
+		outline-offset: -.5rem;
+
+		&--p1 {
+			left: 0;
+			top: -.5rem;
+		}
+
+		&--p2 {
+			right: 0;
+			top: -3rem;
+		}
+
+		&--p3 {
+			left: -5%;
+			top: 15rem;
+		}
+
+		&:hover {
+			outline: .5rem solid $color-mariner-primary;
+			transform: scale(1.10) translateY(-.5rem);
+			box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+			z-index: 20;
+
+		}
+	}
+	
+	//if not hovered, do this thing (shrink images)
+	&:hover &__photo:not(:hover) {
+		transform: scale(.8);
+	}
+}
