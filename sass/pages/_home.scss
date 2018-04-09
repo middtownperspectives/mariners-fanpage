@@ -3,3 +3,18 @@
 	padding: 25rem 0;
 	margin-top: -15%;
 }
+
+.section-features {
+	padding: 20rem 0;
+	background-image: linear-gradient(to right bottom, rgba($color-mariner-primary, 0.9), rgba($color-mariner-secondary, 0.9) ), url(../images/mariners-hero.jpg);
+	background-size: cover;
+	background-position: center;
+
+	transform: skewY(7deg);
+	margin-top: -9rem;
+	
+	//direct child selector to grab anything in this class I dont want warpped by undoing the warp.
+	& > * {
+		transform: skewY(-7deg);
+	}
+}

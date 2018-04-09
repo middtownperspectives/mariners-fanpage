@@ -204,10 +204,38 @@ body {
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.8); }
 
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform .3s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: .5rem;
+    background-image: linear-gradient(to right, #00685E, #0C2340);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.05); }
+
 .section-about {
   background-color: #F5F5F5;
   padding: 25rem 0;
   margin-top: -15%; }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(0, 104, 94, 0.9), rgba(12, 35, 64, 0.9)), url(../images/mariners-hero.jpg);
+  background-size: cover;
+  background-position: center;
+  transform: skewY(7deg);
+  margin-top: -9rem; }
+  .section-features > * {
+    transform: skewY(-7deg); }
 
 .header {
   height: 95vh;
