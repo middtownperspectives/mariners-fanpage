@@ -154,6 +154,12 @@ body {
   .btn--white::after {
     background-color: #fff; }
 
+.btn--yellow {
+  background-color: #FFCC00;
+  color: #002878; }
+  .btn--yellow::after {
+    background-color: #FFCC00; }
+
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
   animation-fill-mode: backwards; }
@@ -226,10 +232,9 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem; }
+  height: 53rem; }
   .card__side {
-    height: 50rem;
-    color: white;
+    height: 53rem;
     font-size: 5rem;
     transition: all .8s ease;
     position: absolute;
@@ -245,24 +250,81 @@ body {
     .card__side--back {
       transform: rotateY(180deg); }
       .card__side--back--1 {
-        background-image: linear-gradient(to right bottom, #002878, #FFCC00); }
+        background-image: linear-gradient(to right bottom, #002878, #FFCC00);
+        background-position: center;
+        background-size: cover; }
+      .card__side--back--2 {
+        background-image: linear-gradient(to right bottom, #002878, #FFCC00);
+        background-position: center;
+        background-size: cover; }
+      .card__side--back--3 {
+        background-image: linear-gradient(to right bottom, #002878, #FFCC00);
+        background-position: center;
+        background-size: cover; }
+      .card__side--back--4 {
+        background-image: linear-gradient(to right bottom, #002878, #FFCC00);
+        background-position: center;
+        background-size: cover; }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0); }
+    .card:hover .card__side--back--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 204, 0, 0.8), rgba(0, 40, 120, 0.8)), url(../images/kyle-seager-bobblehead.jpg); }
+    .card:hover .card__side--back--2 {
+      background-image: linear-gradient(to right bottom, rgba(255, 204, 0, 0.8), rgba(0, 40, 120, 0.8)), url(../images/robinson-cano-bobblehead.jpg); }
+    .card:hover .card__side--back--3 {
+      background-image: linear-gradient(to right bottom, rgba(255, 204, 0, 0.8), rgba(0, 40, 120, 0.8)), url(../images/james-paxton-bobblehead.jpg); }
+    .card:hover .card__side--back--4 {
+      background-image: linear-gradient(to right bottom, rgba(255, 204, 0, 0.8), rgba(0, 40, 120, 0.8)), url(../images/felix-hernandez-bobblehead.jpg); }
   .card__picture {
+    background-position: center;
     background-size: cover;
     height: 25rem;
     background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%); }
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, rgba(255, 204, 0, 0.8), rgba(0, 40, 120, 0.8)), url(../images/kyle-seager-bh.jpg); }
     .card__picture--2 {
-      background-image: url(../images/kyle-seager-bobblehead.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 204, 0, 0.8), rgba(0, 40, 120, 0.8)), url(../images/robinson-cano-bh.jpg); }
     .card__picture--3 {
-      background-image: url(../images/robinson-cano-bobblehead.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 204, 0, 0.8), rgba(0, 40, 120, 0.8)), url(../images/james-paxton-bh.jpg); }
     .card__picture--4 {
-      background-image: url(../images/felix-hernandez-bobblehead.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 204, 0, 0.8), rgba(0, 40, 120, 0.8)), url(../images/felix-hernandez-bh.jpg); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+  .card__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 204, 0, 0.8), rgba(0, 40, 120, 0.8)); }
+  .card__details {
+    padding: 3rem; }
+    .card__details ul {
+      width: 80%;
+      list-style: none;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #F5F5F5; }
+  .card__cta {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
 
 .section-about {
   background-color: #F5F5F5;
@@ -290,6 +352,7 @@ body {
   background-size: cover;
   background-position: top;
   position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%); }
   .header__logo-box {
     position: absolute;

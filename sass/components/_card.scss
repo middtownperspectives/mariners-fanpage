@@ -4,11 +4,10 @@
 	perspective: 150rem;
 	-moz-perspective: 150rem;
 	position: relative;
-	height: 50rem;
+	height: 53rem;
 
 	&__side {
-		height: 50rem;
-		color: white;
+		height: 53rem;
 		font-size: 5rem;
 		transition: all .8s ease;
 		position: absolute;
@@ -30,7 +29,26 @@
 
 			&--1 {
 				background-image: linear-gradient(to right bottom, $color-mariner-retro-blue, $color-mariner-retro-yellow);
+				background-position: center;
+				background-size: cover;
+			}
 
+			&--2 {
+				background-image: linear-gradient(to right bottom, $color-mariner-retro-blue, $color-mariner-retro-yellow);
+				background-position: center;
+				background-size: cover;
+			}
+
+			&--3 {
+				background-image: linear-gradient(to right bottom, $color-mariner-retro-blue, $color-mariner-retro-yellow);
+				background-position: center;
+				background-size: cover;
+			}
+
+			&--4 {
+				background-image: linear-gradient(to right bottom, $color-mariner-retro-blue, $color-mariner-retro-yellow);
+				background-position: center;
+				background-size: cover;
 			}
 		}
 	}
@@ -41,13 +59,35 @@
 
 	&:hover &__side--back {
 		transform: rotateY(0);
+
+		&--1 {
+			background-image: linear-gradient(to right bottom, rgba($color-mariner-retro-yellow, .8), rgba($color-mariner-retro-blue, .8) ), url(../images/kyle-seager-bobblehead.jpg);
+
+		}
+
+		&--2 {
+			background-image: linear-gradient(to right bottom, rgba($color-mariner-retro-yellow, .8), rgba($color-mariner-retro-blue, .8) ), url(../images/robinson-cano-bobblehead.jpg);
+
+		}
+
+		&--3 {
+			background-image: linear-gradient(to right bottom, rgba($color-mariner-retro-yellow, .8), rgba($color-mariner-retro-blue, .8) ), url(../images/james-paxton-bobblehead.jpg);
+
+		}
+
+		&--4 {
+			background-image: linear-gradient(to right bottom, rgba($color-mariner-retro-yellow, .8), rgba($color-mariner-retro-blue, .8) ), url(../images/felix-hernandez-bobblehead.jpg);
+
+		}
 	}
 
 	//----------- front of card styles ----------//
 	&__picture {
+		background-position: center;
 		background-size: cover;
 		height: 25rem;
 		background-blend-mode: screen;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 
 		&--1 {
@@ -55,15 +95,66 @@
 		}
 
 		&--2 {
-			background-image: url(../images/kyle-seager-bobblehead.jpg);
+			background-image: linear-gradient(to right bottom, rgba($color-mariner-retro-yellow, .8), rgba($color-mariner-retro-blue, .8) ), url(../images/robinson-cano-bh.jpg);
 		}
 
 		&--3 {
-			background-image: url(../images/robinson-cano-bobblehead.jpg);
+			background-image: linear-gradient(to right bottom, rgba($color-mariner-retro-yellow, .8), rgba($color-mariner-retro-blue, .8) ), url(../images/james-paxton-bh.jpg);
 		}
 
 		&--4 {
-			background-image: url(../images/felix-hernandez-bobblehead.jpg);
+			background-image: linear-gradient(to right bottom, rgba($color-mariner-retro-yellow, .8), rgba($color-mariner-retro-blue, .8) ), url(../images/felix-hernandez-bh.jpg);
 		}
+	}
+
+	&__heading {
+		font-size: 2.8rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		text-align: right;
+		color: $color-white;
+		position: absolute;
+		top: 12rem;
+		right: 2rem;
+		width: 75%;
+	}
+
+	&__heading-span {
+		padding: 1rem 1.5rem;
+		-webkit-box-decoration-break: clone;
+		box-decoration-break: clone;
+
+		&--1 {
+			background-image: linear-gradient(to right bottom, rgba($color-mariner-retro-yellow, .8), rgba($color-mariner-retro-blue, .8));
+		}
+	}
+
+	&__details {
+		padding: 3rem;
+
+		ul {
+			width: 80%;
+			list-style: none;
+			margin: 0 auto;
+
+			li {
+				text-align: center;
+				font-size: 1.5rem;
+				padding: 1rem;
+
+				&:not(:last-child) {
+					border-bottom: 1px solid $color-white-smoke;
+				}
+			}
+		}
+	}
+
+	//----------- Back of card styles ----------//
+
+	&__cta {
+		position: absolute;
+		top: 90%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 }

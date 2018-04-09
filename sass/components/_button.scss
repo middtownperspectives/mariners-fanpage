@@ -49,6 +49,15 @@
 		}
 	}
 
+	&--yellow {
+		background-color: $color-mariner-retro-yellow;
+		color: $color-mariner-retro-blue;
+		
+		&::after {
+			background-color: $color-mariner-retro-yellow;
+		}
+	}
+	
 	&--animated {
 		animation: moveInBottom .5s ease-out .75s;
 		animation-fill-mode: backwards;
