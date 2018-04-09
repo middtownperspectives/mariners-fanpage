@@ -1,0 +1,17 @@
+//partial sass file for basic resets and in-style elements
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%; /*browsers default to 16px as font size... this makes initial font size 10px instead --- basically defines what 1em is equal to*/
+}
+
+body {
+	box-sizing: border-box; 
+}
