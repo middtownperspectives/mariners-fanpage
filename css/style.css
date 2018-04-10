@@ -7,6 +7,28 @@
 /*=============================================>>>>>
 					GRID
 ===============================================>>>>>*/
+/*
+0 - 600px; phone
+600 - 900px: tablet portrait
+900 - 1200px: tablet landscape
+1200 - 1800: desktop, main styling
+1800 + : large screens
+
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+order of query creation
+1. base & type
+2. general layout
+3. grid
+4. page layouts
+5. components
+
+em works better than px and rem with media queries... using em with media queries
+1em = 16px.
+*/
 *,
 *::after,
 *::before {
@@ -16,10 +38,23 @@
 
 html {
   font-size: 62.5%;
-  /*browsers default to 16px as font size... this makes initial font size 10px instead --- basically defines what 1em is equal to*/ }
+  /*browsers default to 16px as font size... // 1rem is 10px; 10px/16px = 62.5%. this makes initial font size 10px instead --- basically defines what 1rem is equal too*/ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 @keyframes moveInLeft {
   0% {
@@ -54,8 +89,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #8A8D8F;
-  padding: 3rem; }
+  color: #8A8D8F; }
 
 .heading-primary {
   color: #fff;
@@ -70,6 +104,10 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out; }
+  @media (max-width: 37.5em) {
+    .heading-primary {
+      letter-spacing: 1rem;
+      font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -77,6 +115,9 @@ body {
     letter-spacing: 2rem;
     animation: moveInRight 1s ease-out;
     /*shorthand for calling animations*/ }
+  @media (max-width: 37.5em) {
+    .heading-primary {
+      letter-spacing: .5rem; } }
 
 .heading-secondary {
   font-size: 4rem;
@@ -88,6 +129,12 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   transition: all .2s; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 3rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skewY(6deg) skewX(6deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
@@ -112,9 +159,15 @@ body {
 
 .utl-margin-bottom-medium {
   margin-bottom: 4rem !important; }
+  @media (max-width: 56.25em) {
+    .utl-margin-bottom-medium {
+      margin-bottom: 2rem !important; } }
 
 .utl-margin-bottom-big {
   margin-bottom: 8rem !important; }
+  @media (max-width: 56.25em) {
+    .utl-margin-bottom-big {
+      margin-bottom: 5rem !important; } }
 
 .utl-margin-top-big {
   margin-bottom: 12rem !important; }
@@ -505,6 +558,10 @@ body {
   background-color: #F5F5F5;
   padding: 25rem 0;
   margin-top: -15%; }
+  @media (max-width: 56.25em) {
+    .section-about {
+      padding: 15rem 0;
+      margin-top: -25%; } }
 
 .section-features {
   padding: 20rem 0;
@@ -520,10 +577,16 @@ body {
   background-color: #F5F5F5;
   padding: 15rem 0 10rem 0;
   margin-top: -9rem; }
+  @media (max-width: 56.25em) {
+    .section-events {
+      padding: 10rem 0; } }
 
 .section-stories {
   padding: 5em 0;
   position: relative; }
+  @media (max-width: 56.25em) {
+    .section-stories {
+      padding: 20rem 0 10rem 0; } }
 
 .section-newsletter {
   padding: 15rem 0;
@@ -547,6 +610,10 @@ body {
   position: relative;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%); }
+  @media (max-width: 56.25em) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 80%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 80%); } }
   .header__logo-box {
     position: absolute;
     top: 4rem;
@@ -564,11 +631,25 @@ body {
   max-width: 114rem;
   margin: 0 auto; }
   .row:not(:last-child) {
-    margin-bottom: 6rem; }
+    margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
   .row [class^="col-"] {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
+  @media (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
   .row::after {
     content: "";
     display: table;
@@ -591,9 +672,15 @@ body {
   padding: 12rem 0;
   font-size: 1.4rem;
   color: #002878; }
+  @media (max-width: 56.25em) {
+    .footer {
+      padding: 8rem 0; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .footer__logo-box {
+        margin-bottom: 6rem; } }
   .footer__logo {
     width: 20rem;
     height: auto; }
@@ -601,6 +688,10 @@ body {
     border-top: 1px solid #002878;
     padding-top: 2rem;
     display: inline-block; }
+    @media (max-width: 56.25em) {
+      .footer__navigation {
+        width: 100%;
+        text-align: center; } }
   .footer__list {
     list-style: none; }
   .footer__item {
@@ -623,6 +714,11 @@ body {
     padding-top: 2rem;
     width: 80%;
     float: right; }
+    @media (max-width: 56.25em) {
+      .footer__copyright {
+        width: 100%;
+        text-align: center;
+        float: none; } }
 
 .nav__checkbox {
   display: none; }

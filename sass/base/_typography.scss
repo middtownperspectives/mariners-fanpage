@@ -4,7 +4,6 @@ body {
 	font-size: $default-font-size;
 	line-height: 1.7;
 	color: $color-mariner-silver;
-	padding: 3rem;
 }
 
 .heading-primary {
@@ -23,6 +22,12 @@ body {
 		animation-timing-function: ease-out;
 	}
 
+	@include respond(phone) {
+		letter-spacing: 1rem;
+		font-size: 5rem;
+		
+	}
+
 	&--sub {
 		display: block;
 		font-size: 2rem;
@@ -30,6 +35,11 @@ body {
 		letter-spacing: 2rem;
 		animation: moveInRight 1s ease-out; /*shorthand for calling animations*/
 	}
+
+	@include respond(phone) {
+		letter-spacing: .5rem;		
+	}
+
 }
 
 .heading-secondary {
@@ -43,6 +53,13 @@ body {
 	color: transparent;
 	transition: all .2s;
 
+	@include respond(tab-port) {
+		font-size: 3rem;
+	}
+
+	@include respond(phone) {
+		font-size: 2.5rem;
+	}
 	&:hover {
 		transform: skewY(6deg) skewX(6deg) scale(1.1);
 		text-shadow: .5rem 1rem 2rem rgba($color-black, .2);

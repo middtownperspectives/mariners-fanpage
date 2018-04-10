@@ -2,6 +2,11 @@
 	background-color: $color-white-smoke;
 	padding: 25rem 0;
 	margin-top: -15%;
+
+	@include respond(tab-port) {
+		padding: 15rem 0;
+		margin-top: -25%;
+	}
 }
 
 .section-features {
@@ -23,11 +28,19 @@
 	background-color: $color-white-smoke;
 	padding: 15rem 0 10rem 0;
 	margin-top: -9rem;
+
+	@include respond(tab-port) {
+		padding: 10rem 0;
+	}
 }
 
 .section-stories {
 	padding: 5em 0;
 	position: relative;
+
+	@include respond(tab-port) {
+		padding: 20rem 0 10rem 0;
+	}
 }
 
 .section-newsletter {

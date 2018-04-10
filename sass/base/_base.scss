@@ -9,9 +9,26 @@
 }
 
 html {
-	font-size: 62.5%; /*browsers default to 16px as font size... this makes initial font size 10px instead --- basically defines what 1em is equal to*/
+	font-size: 62.5%; /*browsers default to 16px as font size... // 1rem is 10px; 10px/16px = 62.5%. this makes initial font size 10px instead --- basically defines what 1rem is equal too*/
+	
+	@include respond(tab-land) { //width less than 1200?
+		font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
+	}
+
+	@include respond(tab-port) { //width less than 900?
+		font-size: 50%; //1rem = 8px, 8/16 = 50%
+	}
+
+	@include respond(big-desktop) {
+		font-size: 75%; //1rem = 12, 12/16
+	}
 }
 
 body {
-	box-sizing: border-box; 
+	box-sizing: border-box;
+	padding: 3rem; 
+
+	@include respond(tab-port) { //width less than 900?
+		padding: 0; 
+	}
 }
