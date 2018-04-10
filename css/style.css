@@ -91,6 +91,8 @@ body {
   .heading-secondary:hover {
     transform: skewY(6deg) skewX(6deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .heading-secondary--1 {
+    background-image: linear-gradient(to right, #00685E, #FFCC00); }
 
 .heading-tertiary {
   font-size: 2rem;
@@ -103,21 +105,21 @@ body {
     margin-bottom: 3rem; }
 
 .utl-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .utl-margin-bottom-small {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .utl-margin-bottom-medium {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .utl-margin-bottom-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .utl-margin-top-big {
-  margin-bottom: 12rem; }
+  margin-bottom: 12rem !important; }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
   padding: 1.5rem 4rem;
@@ -126,7 +128,9 @@ body {
   transition: all .2s;
   /*shorthand for transition*/
   position: relative;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer; }
 
 .btn:hover {
   transform: translateY(-0.3rem);
@@ -135,7 +139,8 @@ body {
     transform: scale(1.5);
     opacity: 0; }
 
-.btn:active {
+.btn:active, .btn:focus {
+  outline: none;
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3); }
 
@@ -162,6 +167,12 @@ body {
   color: #002878; }
   .btn--yellow::after {
     background-color: #FFCC00; }
+
+.btn--mariner-primary {
+  background-color: #00685E;
+  color: #fff; }
+  .btn--mariner-primary::after {
+    background-color: #00685E; }
 
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
@@ -394,6 +405,83 @@ body {
     width: 100%;
     object-fit: cover; }
 
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  font-color: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block;
+  transition: all .3s; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #00685E; }
+  .form__input:focus:invalid {
+    border-bottom: 3px solid #FFCC00; }
+  .form__input::-webkit-input-placeholder {
+    color: #8A8D8F; }
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: .7rem;
+  display: block;
+  transition: all .3s; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
+
+.form__radio-group {
+  width: 45%;
+  display: inline-block; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem; }
+
+.form__radio-btn {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #00685E;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -.4rem; }
+
+.form::after {
+  content: "";
+  display: block;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #00685E;
+  opacity: 0;
+  transition: opacity .2s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-btn::after {
+  opacity: 1; }
+
+.form__radio-input {
+  display: none; }
+
 .section-about {
   background-color: #F5F5F5;
   padding: 25rem 0;
@@ -415,8 +503,22 @@ body {
   margin-top: -9rem; }
 
 .section-stories {
-  padding: 15em 0;
+  padding: 5em 0;
   position: relative; }
+
+.section-newsletter {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #00685E, #0C2340); }
+
+.newsletter {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 48%, transparent 48%), url(../images/ichiro.png);
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+  height: 50rem; }
+  .newsletter__form {
+    width: 49%;
+    padding: 6rem; }
 
 .header {
   height: 95vh;
