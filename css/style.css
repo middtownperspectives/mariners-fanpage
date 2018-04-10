@@ -114,6 +114,9 @@ body {
 .utl-margin-bottom-big {
   margin-bottom: 8rem; }
 
+.utl-margin-top-big {
+  margin-bottom: 12rem; }
+
 .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
@@ -326,6 +329,71 @@ body {
     left: 50%;
     transform: translate(-50%, -50%); }
 
+.story {
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg);
+  position: relative; }
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    float: left;
+    -webkit-shape-outside: cirlce(50% at 50% 50%);
+    shape-outside: cirlce(50% at 50% 50%);
+    -webkit-clip-path: cirlce(50% at 50% 50%);
+    clip-path: cirlce(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    overflow: hidden;
+    position: relative; }
+  .story__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visablity: hidden;
+    transition: all .5s; }
+    .story__img--shift-right {
+      transform: translateX(1rem) scale(1.4); }
+  .story__text {
+    transform: skewX(12deg); }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visablity: hidden; }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .2;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 .section-about {
   background-color: #F5F5F5;
   padding: 25rem 0;
@@ -343,8 +411,12 @@ body {
 
 .section-events {
   background-color: #F5F5F5;
-  padding: 15rem 0 50rem 0;
+  padding: 15rem 0 10rem 0;
   margin-top: -9rem; }
+
+.section-stories {
+  padding: 15em 0;
+  position: relative; }
 
 .header {
   height: 95vh;
