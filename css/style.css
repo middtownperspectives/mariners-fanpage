@@ -260,15 +260,34 @@ body {
     z-index: 10;
     transition: all .2s;
     outline-offset: -.5rem; }
+    @media (max-width: 56.25em) {
+      .composition__photo {
+        float: left;
+        position: relative;
+        width: 33.33%;
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); } }
     .composition__photo--p1 {
       left: 0;
       top: -.5rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p1 {
+          top: 0;
+          transform: scale(1.3); } }
     .composition__photo--p2 {
       right: 0;
       top: -3rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p2 {
+          top: -8rem;
+          transform: scale(1.3); } }
     .composition__photo--p3 {
       left: -5%;
       top: 15rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p3 {
+          top: 0;
+          left: 0;
+          transform: scale(1.4); } }
     .composition__photo:hover {
       outline: 0.5rem solid #00685E;
       transform: scale(1.1) translateY(-0.5rem);
@@ -285,6 +304,10 @@ body {
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: transform .3s; }
+  @media (max-width: 56.25em) {
+    .feature-box {
+      padding: 1.5rem;
+      margin-bottom: 0; } }
   .feature-box__icon {
     font-size: 6rem;
     margin-bottom: .5rem;
@@ -388,10 +411,29 @@ body {
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #F5F5F5; }
   .card__cta {
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    text-align: center;
+    width: 100%;
+    padding: 4rem; }
+  @media (max-width: 56.25em) {
+    .card {
+      height: auto; }
+      .card__side {
+        height: auto;
+        position: relative;
+        border-radius: 3px; }
+        .card__side--back {
+          transform: rotateY(0); }
+      .card:hover .card__side--front {
+        transform: rotateY(0); }
+      .card__cta {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%); } }
 
 .story {
   width: 80%;
@@ -404,6 +446,14 @@ body {
   font-size: 1.6rem;
   transform: skewX(-12deg);
   position: relative; }
+  @media (max-width: 56.25em) {
+    .story {
+      width: 100%;
+      padding: 4rem;
+      padding-left: 7rem; } }
+  @media (max-width: 37.5em) {
+    .story {
+      transform: skewX(0); } }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -416,6 +466,9 @@ body {
     transform: translateX(-3rem) skewX(12deg);
     overflow: hidden;
     position: relative; }
+    @media (max-width: 37.5em) {
+      .story__shape {
+        transform: translateX(-3rem) skewX(0); } }
   .story__img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
@@ -425,6 +478,9 @@ body {
       transform: translateX(1rem) scale(1.4); }
   .story__text {
     transform: skewX(12deg); }
+    @media (max-width: 37.5em) {
+      .story__text {
+        transform: skewX(0); } }
   .story__caption {
     position: absolute;
     top: 50%;
@@ -572,6 +628,9 @@ body {
   margin-top: -9rem; }
   .section-features > * {
     transform: skewY(-7deg); }
+  @media (max-width: 56.25em) {
+    .section-features {
+      padding: 10rem 0; } }
 
 .section-events {
   background-color: #F5F5F5;
@@ -596,11 +655,16 @@ body {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 48%, transparent 48%), url(../images/ichiro.png);
   background-size: cover;
   border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
-  height: 50rem; }
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3); }
+  @media (max-width: 75em) {
+    .newsletter {
+      background-image: linear-gradient(105deg, white 0%, rgba(255, 255, 255, 0.8) 70%), url(../images/ichiro.png); } }
   .newsletter__form {
     width: 49%;
     padding: 6rem; }
+    @media (max-width: 75em) {
+      .newsletter__form {
+        width: 70%; } }
 
 .header {
   height: 95vh;

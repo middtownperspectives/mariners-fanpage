@@ -22,6 +22,10 @@
 	& > * {
 		transform: skewY(-7deg);
 	}
+
+	@include respond(tab-port) {
+		padding: 10rem 0;
+	}
 }
 
 .section-events {
@@ -53,11 +57,22 @@
 	background-size: cover;
 	border-radius: 3px;
 	box-shadow: 0 1.5rem 4rem rgba($color-black, .3);
+	
+	@include respond(tab-land) {
+		background-image: linear-gradient(105deg, rgba($color-white, 1) 0%, rgba($color-white, .8) 70%), url(../images/ichiro.png);
 
-	height: 50rem;
+	}
 
 	&__form {
 		width: 49%;
 		padding: 6rem;
+
+		@include respond(tab-land) {
+			width: 70%;
+		}
+		@include resond(tab-port) {
+			width: 100%;
+		}
+
 	}
 }
