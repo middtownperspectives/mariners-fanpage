@@ -40,16 +40,16 @@ em works better than px and rem with media queries... using em with media querie
 
 @mixin respond($breakpoint) {  //$breakpoint is a sass variable created to pass in values... amazing using advanced sass / css mixins in this manor
 	@if $breakpoint == phone {
-		@media (max-width: 37.5em) { @content }; //37.5em = 600px / 16px ... @content allows us to pass in a block of code into mixins. 
+		@media only screen and (max-width: 37.5em) { @content }; //37.5em = 600px / 16px ... @content allows us to pass in a block of code into mixins. 
 	}
 	@if $breakpoint == tab-port {
-		@media (max-width: 56.25em) { @content }; //56.25em = 900px / 16px
+		@media only screen and (max-width: 56.25em) { @content }; //56.25em = 900px / 16px
 	}
 	@if $breakpoint == tab-land {
-		@media (max-width: 75em) { @content }; //75em = 1200px / 16px
+		@media only screen and (max-width: 75em) { @content }; //75em = 1200px / 16px
 	}
 	@if $breakpoint == big-desktop {
-		@media (min-width: 112.5em) { @content }; //112.5em = 1800px / 16px
+		@media only screen and (min-width: 112.5em) { @content }; //112.5em = 1800px / 16px
 	}
 
 }

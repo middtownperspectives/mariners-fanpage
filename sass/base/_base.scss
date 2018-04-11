@@ -32,3 +32,8 @@ body {
 		padding: 0; 
 	}
 }
+
+::selection {
+	background-color: $color-mariner-primary;
+	color: $color-white;
+}
