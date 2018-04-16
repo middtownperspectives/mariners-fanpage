@@ -1,3 +1,6 @@
+/*=============================================>>>>>
+	MIXINS used for clearing and media queries
+===============================================>>>>>*/
 @mixin clearfix {
     &::after {
         content: "";

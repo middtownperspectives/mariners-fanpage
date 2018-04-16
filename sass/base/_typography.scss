@@ -1,3 +1,5 @@
+//find all of the typography styling here
+
 body {
 	font-family: "lato", sans-serif;
 	font-weight: 400;
@@ -25,7 +27,6 @@ body {
 	@include respond(phone) {
 		letter-spacing: 1rem;
 		font-size: 5rem;
-		
 	}
 
 	&--sub {
